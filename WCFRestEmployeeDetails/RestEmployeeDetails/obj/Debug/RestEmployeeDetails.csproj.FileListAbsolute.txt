@@ -1,0 +1,13 @@
+C:\Users\D065085\source\repos\WCFRestEmployeeDetails\RestEmployeeDetails\bin\RestEmployeeDetails.dll.config
+C:\Users\D065085\source\repos\WCFRestEmployeeDetails\RestEmployeeDetails\bin\RestEmployeeDetails.dll
+C:\Users\D065085\source\repos\WCFRestEmployeeDetails\RestEmployeeDetails\bin\RestEmployeeDetails.pdb
+C:\Users\D065085\source\repos\WCFRestEmployeeDetails\RestEmployeeDetails\bin\EntityFramework.dll
+C:\Users\D065085\source\repos\WCFRestEmployeeDetails\RestEmployeeDetails\bin\EntityFramework.SqlServer.dll
+C:\Users\D065085\source\repos\WCFRestEmployeeDetails\RestEmployeeDetails\bin\EntityFramework.xml
+C:\Users\D065085\source\repos\WCFRestEmployeeDetails\RestEmployeeDetails\bin\EntityFramework.SqlServer.xml
+C:\Users\D065085\source\repos\WCFRestEmployeeDetails\RestEmployeeDetails\obj\Debug\RestEmployeeDetails.csproj.CoreCompileInputs.cache
+C:\Users\D065085\source\repos\WCFRestEmployeeDetails\RestEmployeeDetails\obj\Debug\RestEmployeeDetails.csproj.CopyComplete
+C:\Users\D065085\source\repos\WCFRestEmployeeDetails\RestEmployeeDetails\obj\Debug\RestEmployeeDetails.dll
+C:\Users\D065085\source\repos\WCFRestEmployeeDetails\RestEmployeeDetails\obj\Debug\RestEmployeeDetails.pdb
+C:\Users\D065085\source\repos\WCFRestEmployeeDetails\RestEmployeeDetails\obj\Debug\RestEmployeeDetails.csprojAssemblyReference.cache
+C:\Users\D065085\source\repos\WCFRestEmployeeDetails\RestEmployeeDetails\bin\Scrypt.dll

@@ -1,0 +1,32 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<EmployeeDetailsMVC.Models.Employees>
+
+<tr>
+
+    <td>
+        <input type="checkbox" name="employeeIdsToDelete" id="employeeIdsToDelete" value="@Model.First().Id" />
+    </td>
+    <td>
+        @Model.First().FullName
+    </td>
+    <td>
+        @Model.First().Gender
+    </td>
+    <td>
+        @Model.First().Age
+    </td>
+    <td>
+        @Model.First().EmailAddress
+    </td>
+    <td>
+        @Model.First().Salary
+    </td>
+    <td>
+        @Model.First().PersonalWebsite
+    </td>
+</tr>
+
+
+
+

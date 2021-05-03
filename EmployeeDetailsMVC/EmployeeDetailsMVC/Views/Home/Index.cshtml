@@ -1,0 +1,122 @@
+﻿
+@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<EmployeeDetailsMVC.Models.Employees>
+@using EmployeeDetailsMVC.CustomHtmlHelpers;
+<reference path="../scripts/jquery-3.3.1.js" />
+@Scripts.Render("~/bundles/jquery")
+<script src="~/Content/CheckAll.js"></script>
+
+@{
+    ViewBag.Title = "Employee Homepage";
+}
+<h2>Index</h2>
+<div style="font-family:Arial">
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <p>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+        {
+            <b>Search By: </b>@Html.RadioButton("SearchBy", "FullName", true) <text>Name</text>
+            @Html.RadioButton("SearchBy", "Gender") <text>Gender</text><br />
+            @Html.TextBox("Search")<input type="submit" value="Search" />
+        }
+    </p>
+    @using (Html.BeginForm("DeleteMultipleRows", "Home", FormMethod.Post))
+    {
+        <table class="table" border="1">
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="checkAll" /> <span></span> Select All
+                    </th>
+                    <th>
+                        @Html.ActionLink("FullName", "Index", new { sortBy = ViewBag.SortFullNameParameter, searchBy = Request.QueryString["searchBy"], search = Request["search"] })
+
+                    </th>
+                    <th>
+                        @Html.ActionLink("Gender", "Index", new { sortBy = ViewBag.SortGenderParameter, searchBy = Request.QueryString["searchBy"], search = Request["search"] })
+
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.First().Age)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.First().EmailAddress)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.First().Salary)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.First().PersonalWebsite)
+                    </th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Count() == 0)
+                {
+                    <tr>
+                        <td colspan="8">No rows match search criteria</td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var item in Model)
+
+                    {
+
+                        <tr>
+
+                            <td>
+                                <input type="checkbox" name="employeeIdsToDelete" id="employeeIdsToDelete" value="@item.Id" />
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FullName)
+
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Gender)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Age)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmailAddress)
+
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Salary)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PersonalWebsite)
+
+                            </td>
+
+                            <td>
+                                @if (User.IsInRole("Admin"))
+                                {
+                                <span>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })<span>|</span>
+                                </span>
+
+                                }
+                                
+                                @Html.ActionLink("Details", "Details", new { id = item.Id }) 
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        <input id="btSubmit" type="submit" value="Delete Selected Employees" />
+    }
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"], sortBy = Request["sortBy"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, DisplayItemSliceAndTotal = true })
+</div>
+
+
