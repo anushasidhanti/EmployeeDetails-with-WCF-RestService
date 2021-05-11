@@ -9,11 +9,11 @@ If someone signs up with a different name, he will be given an Employee role.  A
 
 Signup using the following data on the signup page. The password is hashed and stored in the UserTable. 
 
-Admin - Username - Admin Password - admin
+Admin - Username - Admin, Password - admin
 
-Manager - Username - Manager Password - manager
+Manager - Username - Manager, Password - manager
 
-Employee - Username -Employee Password - employee
+Employee - Username -Employee, Password - employee
 
 Database Details
 
